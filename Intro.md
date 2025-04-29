@@ -1,3 +1,9 @@
+---
+title: Intro
+layout: default
+---
+
+
 # Metabarcoding data analysis quick start guide
 1. [Ohio Supercomputer Center (OSC) Batch System Basics](#ohio-supercomputer-center-osc-batch-system-basics)  
     [1.1 How It Works](#how-it-works)  
