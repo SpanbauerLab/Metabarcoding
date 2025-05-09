@@ -121,7 +121,8 @@ Example file name:
 | `R1`/`R2`              | Forward/Reverse read                 | 
 | `001`                  | its always 001 and I don't know why     | 
 
-If you have reads for each of your samples means the data is multiplexed. 
+
+If you have reads for each of your samples means the data is demultiplexed. 
 
 ### 2. Separating reads based on Samples/Gene/Variable regions.  
 
@@ -197,13 +198,14 @@ Make sure you are providing correct file paths to fastqQC_out folder and you are
 
 [More info](https://hbctraining.github.io/Intro-to-rnaseq-hpc-salmon-flipped/lessons/05_qc_running_fastqc_interactively.html)
 
+FastQC example output for reads with adapter contamination.
+
+![FastQC](./Figures/FastQC_adapter.png)
+
 `FastQC` example output for reads without adapter contamination.
 
 ![FastQC](./Figures/FastQC_clean.png)
 
-FastQC example output for reads with adapter contamination.
-
-![FastQC](./Figures/FastQC_adapter.png)
 
 FastQC generates outputs in `.html` and `.zip` formats. `.zip` files can be removed using `remove_files.sh` to save space.
 
@@ -345,11 +347,12 @@ The script produces a *template* for metadata file, which can be edited to add a
 | WLE-T3S3         | Sample            | Yes  | 2.1       | June      |
 | WLE-T3S3         | Sample            | Yes  | 2.1       | May       |    
 
-**IMPORTANT NOTE: The metadata file in the folder will be a template, which you need to replace with your edited metadata file.**  
+
+**IMPORTANT NOTE: The metadata file included in the folder is only a template. Make sure to replace it with your own edited metadata file**  
 
 ---
 
-> Note: While writing the codes for OSG, I had some samples (other than blanks) that has to be removed after, so I kept another column(Keep) to indicate those samples, but you can remove this column if you  have only blanks that needs to be removed. But if any samples fails in rarefaction QC, you can remove those samples by changing their `Keep` column value to `No`.
+> Note: While writing the code for OSG, I included some non-blank samples that needed to be removed later. To handle this, I added a Keep column to indicate which samples should be retained. You can remove this column if only blank samples need to be excluded. However, if any samples fail the rarefaction QC, simply set their `Keep` value to `No` to exclude them.
 
 ---
 ## <span style="color: skyblue;"> Phyloseq </span>
@@ -418,29 +421,31 @@ Accounts for species abundance and phylogenetic branch lengths. Sensitive to dom
 Focuses solely on presence/absence and phylogenetic tree structure. Highlights differences in rare taxa or evolutionary distinctiveness.  
 
 ---
-### 8. Ordination Techniques
-Ordination methods reduce complex ecological or multivariate data into a simplified visual space to uncover patterns. They are categorized as **constrained** (using external variables to "guide" the ordination) or **unconstrained** (no external variables).  
+
+### 8. Ordination Techniques  
+Ordination methods reduce complex ecological or multivariate data into a simplified visual space to reveal patterns. They are generally categorized as **unconstrained** (without external variables) or **constrained** (guided by external variables such as environmental data).
 
 #### **8.1 Unconstrained Methods**  
-These techniques incorporate **explanatory variables** (e.g., environmental factors) to directly model relationships between predictors and response data.  
+These techniques explore inherent patterns in the data **without using explanatory variables**.
 
 ##### **8.1.1 PCA (Principal Component Analysis)**  
-**PCA** is *actually unconstrained* and reduces dimensionality by transforming variables into linearly uncorrelated principal components. Often confused as constrained due to its widespread use in exploratory analysis.  
+**PCA** is an *unconstrained* method that reduces dimensionality by transforming correlated variables into a set of linearly uncorrelated principal components. It is widely used for exploratory data analysis.
 
 ##### **8.1.2 PCoA (Principal Coordinate Analysis)**  
-**PCoA** (or metric multidimensional scaling) is *unconstrained* and visualizes dissimilarity between samples using any distance metric (e.g., Bray-Curtis).  
+**PCoA**, also known as metric multidimensional scaling, is an *unconstrained* method that visualizes dissimilarities between samples using distance metrics (e.g., Bray-Curtis, UniFrac).
+
+##### **8.1.3 NMDS (Non-Metric Multidimensional Scaling)**  
+**NMDS** is an *unconstrained* method that ranks samples based on dissimilarity, preserving their relative distances in a low-dimensional space. It is robust for non-linear relationships.
 
 #### **8.2 Constrained Methods**  
-These methods explore inherent patterns in the data **without external variables**.  
+These methods incorporate **external explanatory variables** (e.g., environmental factors) to directly model variation in the response data.
 
-##### **8.2.1 NMDS (Non-Metric Multidimensional Scaling)**  
-**NMDS** ranks samples based on dissimilarity, preserving ordination distances in low-dimensional space. Robust for non-linear relationships.  
+##### **8.2.1 RDA (Redundancy Analysis)**  
+**RDA** is a *constrained* ordination method that combines multiple regression with PCA. It models how much variation in the community data can be explained by specified predictors.
 
-##### **8.2.2 RDA (Redundancy Analysis)**  
-**RDA** is *constrained* and combines regression with PCA to model relationships between response variables and predictors.  
+##### **8.2.2 dbRDA (Distance-Based Redundancy Analysis)**  
+**dbRDA** is a *constrained* extension of RDA that allows the use of any dissimilarity measure. It is often used with ecological data (e.g., Bray-Curtis, UniFrac) and requires explanatory variables.
 
-##### **8.2.3 dbRDA (Distance-Based Redundancy Analysis)**  
-**dbRDA** is *constrained* and extends RDA to use any distance metric (e.g., UniFrac). Requires specifying explanatory variables.  
 
 ---
 ### 9. Indicator Species Analysis
