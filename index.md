@@ -400,20 +400,22 @@ Alpha diversity measures the species diversity *within a single sample or habita
 ---
 ### 7. Beta Diversity  
 Beta diversity quantifies the differences in species composition *between samples or habitats*. It reflects how communities change across environmental gradients, geographic distances, or experimental conditions.
-  
-  #### 7.1 Bray-Curtis
-  **Bray-Curtis dissimilarity** measures compositional differences between samples based on species abundance data. It ranges from 0 (identical communities) to 1 (no shared species). Formula:  
-  `BC = 1 - (2 * Σ min(Abundance_i, Abundance_j) / (Σ Abundance_i + Σ Abundance_j))`  
-  #### 7.2 Jaccard's Index  
-  **Jaccard's Index** assesses similarity based on species presence/absence, ignoring abundance. Values range from 0 (no overlap) to 1 (identical species). Often used for binary (yes/no) community comparisons. 
 
-  #### 7.3 UniFrac 
-  **UniFrac** incorporates phylogenetic relationships to measure community dissimilarity. It calculates the fraction of unique branch lengths in a phylogenetic tree between samples. 
-  ###### 7.3.1 Weighted UniFrac
-  Accounts for species abundance and phylogenetic branch lengths. Sensitive to dominant taxa, making it ideal for detecting shifts in abundant lineages.  
+#### 7.1 Bray-Curtis  
+**Bray-Curtis dissimilarity** measures compositional differences between samples based on species abundance data. It ranges from 0 (identical communities) to 1 (no shared species). Formula:  
+`BC = 1 - (2 * Σ min(Abundance_i, Abundance_j) / (Σ Abundance_i + Σ Abundance_j))`  
 
-  ###### 7.3.2 Unweighted UniFrac  
-  Focuses solely on presence/absence and phylogenetic tree structure. Highlights differences in rare taxa or evolutionary distinctiveness.  
+#### 7.2 Jaccard's Index  
+**Jaccard's Index** assesses similarity based on species presence/absence, ignoring abundance. Values range from 0 (no overlap) to 1 (identical species). Often used for binary (yes/no) community comparisons.  
+
+#### 7.3 UniFrac  
+**UniFrac** incorporates phylogenetic relationships to measure community dissimilarity. It calculates the fraction of unique branch lengths in a phylogenetic tree between samples.  
+
+##### 7.3.1 Weighted UniFrac  
+Accounts for species abundance and phylogenetic branch lengths. Sensitive to dominant taxa, making it ideal for detecting shifts in abundant lineages.  
+
+##### 7.3.2 Unweighted UniFrac  
+Focuses solely on presence/absence and phylogenetic tree structure. Highlights differences in rare taxa or evolutionary distinctiveness.  
 
 ---
 ### 8. Ordination Techniques
