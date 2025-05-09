@@ -563,7 +563,7 @@ A robust method designed for compositional microbiome data. Estimates **conditio
   - Accounts for compositionality via log-ratio transformations (e.g., CLR).  
   - Reduces false positives compared to correlation-based methods.  
 - **Applications**:  
-  - Identifying gut microbiome interactions resistant to diet-induced changes. 
+  - Identify gut microbiome interactions that are resistant to diet-induced changes. 
 
 #### 12.3 FlashWeave
 A machine learning-based method that detects **direct and indirect associations** in sparse microbial datasets.  
@@ -633,6 +633,7 @@ Functional diversity prediction infers metabolic or ecological roles of microbia
 |--------------|--------------------------------------------|------------------------------------------|
 | **FAPROTAX** | Simple, environment-focused                | Limited scope, no novel functions        |
 | **PICRUSt2** | Broad pathway coverage, KEGG integration   | Reference bias, ignores HGT              |
+
 
 **When to Use These Tools?**  
 - **FAPROTAX**: For hypothesis-driven studies of biogeochemical cycles in well-characterized environments.  
