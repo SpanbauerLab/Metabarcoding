@@ -576,14 +576,14 @@ A machine learning-based method that detects **direct and indirect associations*
 - **Strengths**:  
   - Robust to noise and outperforms SPIEC-EASI in benchmark studies.  
 
-### **Method Comparison**  
-| **Method**         | **Pros**                                  | **Cons**                                  |  
-|---------------------|-------------------------------------------|-------------------------------------------|  
-| Correlation-Based | Fast, intuitive                          | Spurious edges, ignores compositionality |  
-| SPIEC-EASI         | Robust to compositionality, fewer false positives | Requires tuning (e.g., lambda parameter) |  
-| FlashWeave         | High accuracy, detects indirect links    | Computationally slow for large datasets  |  
+### **Method Comparison**
 
-
+| **Method**         | **Pros**                                  | **Cons**                                  |
+|--------------------|-------------------------------------------|-------------------------------------------|
+| Correlation-Based  | Fast, intuitive                           | Spurious edges, ignores compositionality  |
+| SPIEC-EASI         | Robust to compositionality, fewer false positives | Requires tuning (e.g., lambda parameter) |
+| FlashWeave         | High accuracy, detects indirect links     | Computationally slow for large datasets   |
+ 
 
 **Example Use Case**  
 In a marine microbiome study:  
@@ -627,12 +627,12 @@ Functional diversity prediction infers metabolic or ecological roles of microbia
 - **Reference dependency**: Accuracy depends on genome completeness and phylogenetic proximity to reference taxa.  
 - **Pipeline complexity**: Requires precise OTU clustering (e.g., closed-reference) and alignment.  
 - **Phylogenetic assumptions**: Overlooks horizontal gene transfer (HGT) and strain-specific traits.  
-
 **Comparison**  
-| **Tool**       | **Strengths**                          | **Weaknesses**                          |  
-|-----------------|----------------------------------------|------------------------------------------|  
-| **FAPROTAX**    | Simple, environment-focused            | Limited scope, no novel functions       |  
-| **PICRUSt2**    | Broad pathway coverage, KEGG integration | Reference bias, ignores HGT             |  
+
+| **Tool**     | **Strengths**                              | **Weaknesses**                          |
+|--------------|--------------------------------------------|------------------------------------------|
+| **FAPROTAX** | Simple, environment-focused                | Limited scope, no novel functions        |
+| **PICRUSt2** | Broad pathway coverage, KEGG integration   | Reference bias, ignores HGT              |
 
 **When to Use These Tools?**  
 - **FAPROTAX**: For hypothesis-driven studies of biogeochemical cycles in well-characterized environments.  
