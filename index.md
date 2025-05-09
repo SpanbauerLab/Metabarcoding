@@ -338,7 +338,7 @@ DADA2 pipeline identifies species taxonomy from the raw sequence reads and numbe
 
 ### 10. Metadata file
 
-The script produces a *template* for metadata file, which can be edited to add all available info for the samples. Apart from collected information, 2 additional columns (denoting controls) need to be added for using with `decontam` package.  
+The script produces a *template* for metadata file, which can be edited to add all available info for the samples. Apart from the collected information, 2 additional columns (denoting controls) need to be added for use with `decontam` package.  
 
 
 | SampleID         | Sample_or_Control | Keep | MetaData1 | MetaData2 |  
@@ -346,6 +346,7 @@ The script produces a *template* for metadata file, which can be edited to add a
 | Blank            | Control           | No   | NA        | NA        |  
 | WLE-T3S3         | Sample            | Yes  | 2.1       | June      |
 | WLE-T3S3         | Sample            | Yes  | 2.1       | May       |    
+
 
 
 **IMPORTANT NOTE: The metadata file included in the folder is only a template. Make sure to replace it with your own edited metadata file**  
