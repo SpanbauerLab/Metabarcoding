@@ -384,14 +384,14 @@ To visualize community distribution across samples can be visualized using bar a
 ### 6. Alpha Diversity
 Alpha diversity measures the species diversity *within a single sample or habitat*. It reflects the richness (number of species), evenness (distribution of abundances), and/or phylogenetic diversity of organisms in a community.
 
-  #### 6.1 Chao1 
+#### 6.1 Chao1 
   A non-parametric estimator of species richness, **Chao1** predicts the total number of species in a community, including undetected rare species. It is particularly useful for datasets with many rare taxa (e.g., microbiome studies). This metric uses singletons and doubletons in the dataset. DADA2 often removes singletons and doubletons during the analysis, so **Chao1** is **NOT RECOMMENDED for DADA2 derived datasets**.
 
-  #### 6.2 Shannon Index 
+#### 6.2 Shannon Index 
   The **Shannon Index** (or Shannon-Wiener/Shannon-Weaver index) quantifies diversity by accounting for both species richness and evenness. Higher values indicate greater diversity, calculated as:  
   `H' = -Σ(p_i * ln(p_i))`, where `p_i` is the proportion of species `i`.
 
-  #### 6.3 Simpson Index
+#### 6.3 Simpson Index
   The **Simpson Index** measures the probability that two randomly selected individuals belong to the same species. Values range from 0 (infinite diversity) to 1 (no diversity). Often reported as `1 - D` or `1/D` for intuitive interpretation.
 
   #### 6.4 Faith's PD
