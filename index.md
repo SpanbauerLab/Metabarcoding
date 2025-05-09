@@ -344,12 +344,11 @@ The script produces a *template* for metadata file, which can be edited to add a
 | SampleID         | Sample_or_Control | Keep | MetaData1 | MetaData2 |  
 |------------------|-------------------|------|-----------|-----------|  
 | Blank            | Control           | No   | NA        | NA        |  
-| WLE-T3S3         | Sample            | Yes  | 2.1       | June      |
-| WLE-T3S3         | Sample            | Yes  | 2.1       | May       |    
+| WLE-T3S3         | Sample            | Yes  | 2.1       | June      |  
+| WLE-T3S3         | Sample            | Yes  | 2.1       | May       |  
 
 
-
-**IMPORTANT NOTE: The metadata file included in the folder is only a template. Make sure to replace it with your own edited metadata file**  
+**IMPORTANT NOTE:** The metadata file included in the folder is only a template. Make sure to replace it with your own edited metadata file.
 
 ---
 
