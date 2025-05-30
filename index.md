@@ -698,3 +698,5 @@ add_descriptions.py -i picrust2_out_/EC_metagenome_out/pred_metagenome_unstrat.t
 add_descriptions.py -i picrust2_out/KO_metagenome_out/pred_metagenome_unstrat.tsv.gz -m KO -o picrust2_out/KO_metagenome_out/pred_metagenome_unstrat_descrip.tsv
 add_descriptions.py -i picrust2_out/pathways_out/path_abun_unstrat.tsv.gz -m METACYC -o picrust2_out/pathways_out/path_abun_unstrat_descrip.tsv
 ```
+
+Created and maintained by [shanptom](https://github.com/shanptom).
